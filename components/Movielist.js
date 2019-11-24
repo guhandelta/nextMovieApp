@@ -1,37 +1,11 @@
 import React from "react";
 
 class Movielist extends React.Component {
-  //   state = {
-  //     count: 0
-  //   };
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0
-    };
-    this.increment = this.increment.bind(this); // Instead of using bind, incerment() may be linked as {()=>this.increment()}
-  }
-  increment() {
-    const { count } = this.state;
-    // alert("Incrementing Number");
-    this.setState({ count: count + 1 }); // Every setState will call the render()
-  }
-  decrement = () => {
-    const { count } = this.state;
-    // alert("Decrementing Number");
-    this.setState({ count: count - 1 });
-  };
   render() {
     return (
       <React.Fragment>
-        <div className="">
-          <button onClick={this.increment} className="btn btn-primary">
-            Increment Number
-          </button>
-          <button onClick={this.decrement} className="btn btn-primary">
-            Decrement Number
-          </button>
-          <h1>{this.state.count}</h1>
+        <div>
+          <h1>{this.props.count}</h1>
         </div>
 
         <div className="col-lg-4 col-md-6 mb-4">
