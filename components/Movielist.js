@@ -11,10 +11,14 @@ class Movielist extends React.Component {
     };
   }
   increment = () => {
-    alert("Incrementing Number");
+    const { count } = this.state;
+    // alert("Incrementing Number");
+    this.setState({ count: count + 1 }); // Every setState will call the render()
   };
   decrement = () => {
-    alert("Decrementing Number");
+    const { count } = this.state;
+    // alert("Decrementing Number");
+    this.setState({ count: count - 1 });
   };
   render() {
     return (
