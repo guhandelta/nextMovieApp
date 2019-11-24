@@ -9,12 +9,13 @@ class Movielist extends React.Component {
     this.state = {
       count: 0
     };
+    this.increment = this.increment.bind(this); // Instead of using bind, incerment() may be linked as {()=>this.increment()}
   }
-  increment = () => {
+  increment() {
     const { count } = this.state;
     // alert("Incrementing Number");
     this.setState({ count: count + 1 }); // Every setState will call the render()
-  };
+  }
   decrement = () => {
     const { count } = this.state;
     // alert("Decrementing Number");
