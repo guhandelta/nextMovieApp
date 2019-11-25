@@ -32,7 +32,7 @@ class Movielist extends React.Component {
                 {this.shorten(movie.description, 100)}
               </p>
             </div>
-            <div className="card-footer">
+            <div className="card-footer"> 
               <small className="text-muted">{movie.rating}</small>
             </div>
           </div>
