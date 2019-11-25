@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { Navbar, Sidenav, Carousel, Movielist, Footer } from "../components";
 import { getMovies } from '../actions'
 
 const Home = () => {
-  const movies = getMovies()
+  const [movies, setMovies] = useState([])
+
+  useEffect(() => {
+    // getMovies().then((movies) => {
+    //   setMovies(movies);
+    // })
+
+    const fetchData = async () => {
+      const resMovies = await getMovies()
+      setMovies(resMovies)
+    }
+    fetchData(); 
+  }, [])// useEffect() willl be triggered when the value specified here changes
+  // setMovies(movies) => will throw Too many re-renders error, as multiple SVGElementInstanceList() calls, invokes render() multiple times
   return (
     <div>
       <Head>

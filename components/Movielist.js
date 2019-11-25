@@ -11,7 +11,7 @@ class Movielist extends React.Component {
 
   renderMovies(movies) {
 
-    return (
+     return (
       movies.map(movie => (
 
         <div key={movie.id} className="col-lg-4 col-md-6 mb-4">
