@@ -9,7 +9,8 @@ class Home extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      movies: []
+      movies: [],
+      errorMessage: ''
     }
   }
   // Called only once, when the component is mounted/ added into the DOM tree
@@ -17,14 +18,17 @@ class Home extends React.Component {
   //   const movies = await getMovies()
   //   this.setState({ movies })
   // }
-  componentDidMount() {
+  componentDidMount() { // getMovies(), returns a promise and this is an alternative for not using async/await
     getMovies().then((movies) => {
       this.setState({ movies })
     })
+      .catch((error) => { // Settng the error message to the state
+        this.setState({ errorMessage: error })
+      })
   }
   render() {
 
-    const { movies } = this.state;
+    const { movies, errorMessage } = this.state;
 
     return (
       <div>
@@ -66,6 +70,9 @@ class Home extends React.Component {
               <div className="col-lg-9">
                 <Carousel />
                 <div className="row">
+                  {errorMessage &&
+                    <div className="alert alert-danger" role="alert">{errorMessage}</div>
+                  }
                   <Movielist movies={movies} />
                 </div>
               </div>
