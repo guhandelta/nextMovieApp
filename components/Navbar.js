@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarResponsive">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item active">
-              <Link href='/' to='/'>
+              <Link href='/'>
                 <a className="nav-link">
                   Home
                   <span className="sr-only">(current)</span>
@@ -30,21 +30,21 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link href='/about' to='/about'>
+              <Link href='/about'>
                 <a className="nav-link">
                   About
                 </a>
               </Link>
             </li>
             <li className="nav-item">
-              <Link href='/services' to='/services'>
+              <Link href='/services'>
                 <a className="nav-link">
                   Services
                 </a>
               </Link>
             </li>
             <li className="nav-item">
-              <Link href='/contact' to='/contact'>
+              <Link href='/contact'>
                 <a className="nav-link">
                   Contact
                 </a>
