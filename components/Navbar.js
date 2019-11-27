@@ -5,9 +5,11 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div className="container">
-        <a className="navbar-brand" href="#">
-          Start Bootstrap
-        </a>
+        <Link href='/' as='/'>
+          <a className="navbar-brand" href="/">
+            Movie DB
+          </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
