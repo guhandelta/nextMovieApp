@@ -33,6 +33,7 @@ const Home = (props) => { // The data from getInitialProps will be available in 
 }
 
 Home.getInitialProps = async () => { // async -> as this fn() will be receiving and dealing with promises
+  console.log('Console log from home getInitialProps')
   const movies = await getMovies();
   return {
     movies //movies: movies

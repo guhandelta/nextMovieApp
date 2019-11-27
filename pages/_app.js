@@ -3,8 +3,16 @@ import Head from "next/head";
 import { Navbar, Footer } from "../components";
 
 class MovieApp extends App {
+
+    static async getInitialProps(appContext) { // appContext is the custom name given here for the context obj that getInitialProps-
+        //- receives from Next.js, which allows to prefill the page with Component props, before page load
+        const appProps = await App.getInitialProps(appContext)
+        return { ...appProps } // appProps: ...appProps, if not destructurized here and returned as {appProps}, then it will received as-
+        //- appProps in the render() and passed to the Component as {appProps.pageProps}
+    }
+
     render() {
-        const { Component } = this.props
+        const { Component, pageProps } = this.props // appProps will be received here as pageProps
         return (
             <div className="">
                 <Head>
@@ -33,7 +41,7 @@ class MovieApp extends App {
                 </Head>
                 <Navbar />
                 <div className="base-page">
-                    <Component />
+                    <Component {...pageProps} />
                 </div>
                 <Footer />
                 <style jsx>
