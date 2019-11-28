@@ -5,7 +5,7 @@ import { getMovies } from '../actions'
 
 
 const Home = (props) => { // The data from getInitialProps will be available in the props of the component
-
+  const { images } = props
   return (
     <div>
 
@@ -20,7 +20,7 @@ const Home = (props) => { // The data from getInitialProps will be available in 
               />
             </div>
             <div className="col-lg-9">
-              <Carousel />
+              <Carousel images={images} />
               <div className="row">
                 <Movielist movies={props.movies || []} />
               </div>
@@ -35,8 +35,13 @@ const Home = (props) => { // The data from getInitialProps will be available in 
 Home.getInitialProps = async () => { // async -> as this fn() will be receiving and dealing with promises
   console.log('Console log from home getInitialProps')
   const movies = await getMovies();
+  const images = movies.map(movie => ({
+    id: `img-${movie.id}`,
+    image: movie.image
+  }));
   return {
-    movies //movies: movies
+    movies, //movies: movies
+    images
   }
 }
 
