@@ -37,7 +37,8 @@ Home.getInitialProps = async () => { // async -> as this fn() will be receiving 
   const movies = await getMovies();
   const images = movies.map(movie => ({
     id: `img-${movie.id}`,
-    image: movie.image
+    url: movie.cover,
+    name: movie.name
   }));
   return {
     movies, //movies: movies
