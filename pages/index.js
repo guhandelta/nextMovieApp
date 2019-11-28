@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Navbar, Sidenav, Carousel, Movielist, Footer } from "../components";
-import { getMovies } from '../actions'
+import { getMovies, getCategories } from '../actions'
 
 
 const Home = (props) => { // The data from getInitialProps will be available in the props of the component
-  const { images } = props
+  const { images, categories } = props
   return (
     <div>
 
@@ -16,6 +16,7 @@ const Home = (props) => { // The data from getInitialProps will be available in 
           <div className="row">
             <div className="col-lg-3">
               <Sidenav
+                categories={categories}
                 appName={"Movie DB"}
               />
             </div>
@@ -35,6 +36,7 @@ const Home = (props) => { // The data from getInitialProps will be available in 
 Home.getInitialProps = async () => { // async -> as this fn() will be receiving and dealing with promises
   console.log('Console log from home getInitialProps')
   const movies = await getMovies();
+  const categories = await getCategories();
   const images = movies.map(movie => ({
     id: `img-${movie.id}`,
     url: movie.cover,
@@ -42,7 +44,8 @@ Home.getInitialProps = async () => { // async -> as this fn() will be receiving 
   }));
   return {
     movies, //movies: movies
-    images
+    images,
+    categories
   }
 }
 

@@ -37,12 +37,27 @@ const MOVIE_DATA = [
     }
 ]
 
+const CATEGORY_DATA = [
+    { id: '1', name: 'Action' },
+    { id: '2', name: 'Crime' },
+    { id: '3', name: 'Adventure' },
+    { id: '4', name: 'Thriller' },
+]
+
+export const getCategories = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(CATEGORY_DATA)
+        }, 1000)
+    })
+}
+
 export const getMovies = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(MOVIE_DATA)
-            reject("Unable to fetch the movie data")
-        }, 2000)
+            // reject("Unable to fetch the movie data")
+        }, 1000)
     })
 }
 
