@@ -61,6 +61,17 @@ export const getMovies = () => {
     })
 }
 
+export const createMovie = (movie) => {
+    return new Promise((resolve, reject) => {
+        // Create/Generate ID for movie
+        MOVIE_DATA.push(movie)
+        setTimeout(() => {
+            resolve(MOVIE_DATA) // resolve the updated list of movies
+            // reject("Unable to fetch the movie data")
+        }, 1000)
+    })
+}
+
 export const getMovieById = (id) => {
     return new Promise((resolve, reject) => {
         const movieIndex = MOVIE_DATA.findIndex(movie => movie.id === id)

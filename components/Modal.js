@@ -25,13 +25,15 @@ const Modal = (props) => {
                         </div>
                         <div className="modal-footer">
                             <button ref={ele => closeButton = ele} type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button onClick={submitMovie} type="button" className="btn btn-primary">Save changes</button>
+                            {props.hasSubmit &&
+                                < button onClick={submitMovie} type="button" className="btn btn-primary">Save changes</button>
+                            }
                             {/* In the callback() for ref, ele is how the button element is supplied to the callback() */}
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

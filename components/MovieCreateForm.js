@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 
-const MovieCreateForm = () => {
+const MovieCreateForm = (props) => {
+    // fix uncontrolled data error
     const [form, setForm] = useState({
         name: 'padam',
         description: 'vimarsanam',
     })
 
-    const handleChange = () => {
+    const handleChange = (event) => {
         const target = event.target;
         const name = target.name; //This gets updated everytime the input is selected and as value is provided
 
@@ -17,9 +18,29 @@ const MovieCreateForm = () => {
         })
     }
 
+    const handleGenreChange = (event) => {
+        const { options } = event.target // => const options = event.target.options, when var & attr name are same
+        const optionsCount = options.length
+        let value = []
+        for (let i = 0; i < optionsCount; i++) {
+            if (options[i].selected) {
+                value.push(options[i].value)
+            }
+        }
+        setForm({
+            ...form,
+            genre: value.toString()
+        })
+    }
+
+    const submitForm = () => { // submitForm -> handleFormSubmit() -> handleCreateMovie() -> createMovie() -> handleCreateMovie()
+        // -----------------------this file -> props ->             fn() passed thru props -> actions/index -> sidenav.js
+        // invoke function here, to create movie, as per the props
+        props.handleFormSubmit({ ...form }) //passing a copy of the form, as *form* -> pass by ref, so any changes done anywhere, reflects here
+    }
+
     return (
         <form>
-            {JSON.stringify(form)}
             <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input
@@ -30,7 +51,7 @@ const MovieCreateForm = () => {
                     className="form-control"
                     id="name"
                     aria-describedby="emailHelp"
-                    placeholder="Lord of the Rings"
+                    placeholder="Padam"
                 />
                 {/* providing value attr, without an onChange handler, will cause input to be read only and can't enter values */}
             </div>
@@ -42,11 +63,11 @@ const MovieCreateForm = () => {
                     name="description"
                     type="text"
                     className="form-control"
-                    id="description" placeholder="Somewhere in Middle-earth..."
+                    id="description" placeholder="Short Description"
                 />
             </div>
             <div className="form-group">
-                <label htmlFor="description">Rating</label>
+                <label htmlFor="rating">Rating</label>
                 <input
                     onChange={handleChange}
                     value={form.rating}
@@ -98,14 +119,20 @@ const MovieCreateForm = () => {
             </div>
             <div className="form-group">
                 <label htmlFor="genre">Genre</label>
-                <select multiple className="form-control" id="genre">
-                    <option>drama</option>
-                    <option>music</option>
-                    <option>adventure</option>
-                    <option>historical</option>
-                    <option>action</option>
+                <select multiple
+                    onChange={handleGenreChange}
+                    className="form-control"
+                    id="genre"
+                >
+                    <option>Drama</option>
+                    <option>Music</option>
+                    <option>Adventure</option>
+                    <option>Thriller</option>
+                    <option>Historical</option>
+                    <option>Action</option>
                 </select>
             </div>
+            <button onClick={submitForm} type="button" className="btn btn-primary">Create</button>
         </form>
     )
 }
