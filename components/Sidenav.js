@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import Modal from './Modal'
 
 const Sidenav = props => {
   const { appName, categories } = props;
   return (
     <>
+      <Modal />
       <h1 className="my-4">{appName}</h1>
       <div className="list-group">
 
