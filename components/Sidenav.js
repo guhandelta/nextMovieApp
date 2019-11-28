@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import Modal from './Modal'
+import MovieCreateForm from './MovieCreateForm'
 
 const Sidenav = props => {
   const { appName, categories } = props;
   return (
     <>
-      <Modal />
+      <Modal> {/* Containment*/}
+        <MovieCreateForm />
+      </Modal>
       <h1 className="my-4">{appName}</h1>
       <div className="list-group">
 

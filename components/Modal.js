@@ -1,6 +1,6 @@
-// import React from 'react'
+import React from 'react'
 
-export default function Modal() {
+const Modal = (props) => {
     let closeButton = null
     const submitMovie = () => {
         closeButton.click() //After clicking submit button, close butotn also is given the click event => window closes after submit
@@ -8,7 +8,7 @@ export default function Modal() {
     return (
         <div className="">
             <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Launch demo modal
+                Add Movie
             </button>
 
             <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -21,7 +21,7 @@ export default function Modal() {
                             </button>
                         </div>
                         <div className="modal-body">
-                            ...
+                            {props.children}
                         </div>
                         <div className="modal-footer">
                             <button ref={ele => closeButton = ele} type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -34,3 +34,5 @@ export default function Modal() {
         </div>
     )
 }
+
+export default Modal;
