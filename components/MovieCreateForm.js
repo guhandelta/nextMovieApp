@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 
 const MovieCreateForm = (props) => {
-    // fix uncontrolled data error
+    // uncontrolled data error, occurs if the inputs are not given a default value durng state initialization
     const [form, setForm] = useState({
-        name: 'padam',
-        description: 'vimarsanam',
+        name: '',
+        rating: '',
+        description: '',
+        image: '',
+        cover: '',
+        longDesc: '',
+
     })
 
     const handleChange = (event) => {
@@ -37,6 +42,7 @@ const MovieCreateForm = (props) => {
         // -----------------------this file -> props ->             fn() passed thru props -> actions/index -> sidenav.js
         // invoke function here, to create movie, as per the props
         props.handleFormSubmit({ ...form }) //passing a copy of the form, as *form* -> pass by ref, so any changes done anywhere, reflects here
+        // form and ...form point to different memory space
     }
 
     return (
@@ -125,7 +131,7 @@ const MovieCreateForm = (props) => {
                     id="genre"
                 >
                     <option>Drama</option>
-                    <option>Music</option>
+                    <option>Crime</option>
                     <option>Adventure</option>
                     <option>Thriller</option>
                     <option>Historical</option>
