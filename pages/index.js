@@ -36,7 +36,7 @@ const Home = (props) => { // The data from getInitialProps will be available in 
 
 Home.getInitialProps = async () => { // async -> as this fn() will be receiving and dealing with promises
   console.log('Console log from home getInitialProps')
-  const movies = await getMovies();
+  const movies = await getMovies(); // returns res.body -> Promise and the data can be extracted from a promise using await
   const categories = await getCategories();
   const images = movies.map(movie => ({
     id: `img-${movie.id}`,

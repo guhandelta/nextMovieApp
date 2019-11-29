@@ -8,13 +8,17 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler() // for the app to handle requests to teh server, properly
 
+const movieImages = require('./data.json')
+
 app.prepare().then(() => { // prepare() -> preparing the app to run => compile the code from pages component
+
+
 
     const server = express(); // creating an express server
     server.use(bodyParser.json())//will parse the req & make it available in req.body obj -> this is done before all end points are exe
 
     server.get('/api/v1/movies', (req, res) => {
-        return res.json({ message: "Hello World!" })
+        return res.json(movieImages)
     })
     server.post('/api/v1/movies', (req, res) => {
         const movie = req.body
@@ -31,8 +35,7 @@ app.prepare().then(() => { // prepare() -> preparing the app to run => compile t
     })
 
     server.get('/faq', (req, res) => {
-        res.send(`
-        <html><head></head><body><h1>Hello World!</h1></body></html>`)
+        res.send(`<html><head></head><body><h1>Hello World!</h1></body></html>`)
     })
 
     server.get('*', (req, res) => {// Default route
