@@ -7,7 +7,7 @@ const Carousel = (props) => {
   return (
     <div id="carouselExampleIndicators" className="carousel slide my-4" data-ride="carousel">
       <ol className="carousel-indicators">
-        
+
         {
           images.map((image, index) => (
             <li
@@ -25,8 +25,8 @@ const Carousel = (props) => {
             <div key={image.id} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
               <img
                 className="d-block img-fluid"
-                src={images.url}
-                alt={images.name}
+                src={image.url}
+                alt={image.name}
               />
             </div>
           ))
