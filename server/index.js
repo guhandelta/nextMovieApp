@@ -8,27 +8,31 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler() // for the app to handle requests to teh server, properly
 
-const movieImages = require('./data.json')
+const moviesData = require('./data.json')
 
 app.prepare().then(() => { // prepare() -> preparing the app to run => compile the code from pages component
-
-
 
     const server = express(); // creating an express server
     server.use(bodyParser.json())//will parse the req & make it available in req.body obj -> this is done before all end points are exe
 
     server.get('/api/v1/movies', (req, res) => {
-        return res.json(movieImages)
+        return res.json(moviesData)
     })
+
+    server.get('/api/v1/movies/:id', (req, res) => {
+        const { id } = req.params
+
+        const movie = moviesData.find(m => m.id === id)
+
+        return res.json(movie)
+    })
+
     server.post('/api/v1/movies', (req, res) => {
         const movie = req.body
         console.log(JSON.stringify(movie))
         return res.json({ ...movie, createdTime: 'Today', author: 'Guhaprasaanth' })
     })
-    server.patch('/api/v1/movies/:id', (req, res) => {
-        const { id } = req.params
-        return res.json({ message: `Updating the movie with the id: ${id}` })
-    })
+
     server.delete('/api/v1/movies/:id', (req, res) => {
         const { id } = req.params
         return res.json({ message: `Deleteting the movie with the id: ${id}` })
