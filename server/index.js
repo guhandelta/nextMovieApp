@@ -8,7 +8,10 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler() // for the app to handle requests to teh server, properly
 
-const moviesData = require('./data.json')
+const fs = require('fs')
+const path = require('path')
+const filePath = './data.json'
+const moviesData = require(filePath) // relative path from this file
 
 app.prepare().then(() => { // prepare() -> preparing the app to run => compile the code from pages component
 
@@ -28,9 +31,19 @@ app.prepare().then(() => { // prepare() -> preparing the app to run => compile t
     })
 
     server.post('/api/v1/movies', (req, res) => {
-        const movie = req.body
-        console.log(JSON.stringify(movie))
-        return res.json({ ...movie, createdTime: 'Today', author: 'Guhaprasaanth' })
+        const movie = req.body // This will hold the updated list of movies, after adding the new movie
+        moviesData.push(movie)
+
+        const pathToFile = path.join(__dirname, filePath) // Full path to JSON file
+        const StringifiedData = JSON.stringify(moviesData, null, 2) //null->add each property to a new line, 2->indents the strigify obj with 2 spaces
+
+        fs.writeFile(pathToFile, StringifiedData, err => {
+            if (err) {
+                return res.status(422).send(err)
+            }
+            return res.json('Movie has successfully been added!')
+        })
+
     })
 
     server.delete('/api/v1/movies/:id', (req, res) => {

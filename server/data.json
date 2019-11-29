@@ -1,35 +1,45 @@
 [
-    {
-        "id": "1",
-        "name": "The Shawshank Redemption",
-        "releaseYear": 1994,
-        "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-        "longDesc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque non nobis, impedit veritatis quia, consectetur velit ea error ducimus totam ipsam, nisi dolorem voluptatum ut perspiciatis ex quidem nesciunt assumenda.",
-        "rating": 4.8,
-        "genre": "drama",
-        "cover": "https://wallpapercave.com/wp/wp2014325.jpg",
-        "image": "https://m.media-amazon.com/images/M/MV5BNjQ2NDA3MDcxMF5BMl5BanBnXkFtZTgwMjE5NTU0NzE@._V1_CR0,60,640,360_AL_UX477_CR0,0,477,268_AL_.jpg"
-    },
-    {
-        "id": "2",
-        "name": "The Dark Knight",
-        "releaseYear": 2008,
-        "description": "When the menace known as The Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham. The Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-        "longDesc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad itaque excepturi dignissimos laudantium obcaecati quam blanditiis earum veniam, dicta, velit, quo tenetur dolore ducimus repellat neque, architecto magni in cum.",
-        "rating": 4.7,
-        "genre": "action, crime, drama",
-        "cover": "http://cdn.wallpapername.com/1600x1200/20130609/the%20joker%20twoface%20batman%20the%20dark%20knight%20harvey%20dent_www.wallpapername.com_30.jpg",
-        "image": "https://img.cinemablend.com/filter:scale/quill/c/3/8/0/f/4/c380f4f12cfeec19f0c40c6f57db188f2f98cca8.jpg?mw=600"
-    },
-    {
-        "id": "3",
-        "name": "Lord of the Rings",
-        "releaseYear": 2004,
-        "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
-        "longDesc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, beatae aliquid excepturi! Distinctio temporibus modi eos in facere eum, eligendi incidunt? Eligendi, ea, explicabo. Repellat laboriosam suscipit natus totam dolores?",
-        "rating": 4.9,
-        "genre": "adventure, drama, fantasy",
-        "cover": "https://cdn.wallpapersafari.com/4/17/NtiZBG.jpg",
-        "image": "https://img.cinemablend.com/filter:scale/quill/0/f/5/2/a/6/0f52a6843a25c1a5c1f9a0c00548cad9e1d912e2.jpg?mw=600"
-    }
+  {
+    "id": "1",
+    "name": "The Shawshank Redemption",
+    "releaseYear": 1994,
+    "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "longDesc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque non nobis, impedit veritatis quia, consectetur velit ea error ducimus totam ipsam, nisi dolorem voluptatum ut perspiciatis ex quidem nesciunt assumenda.",
+    "rating": 4.8,
+    "genre": "drama",
+    "cover": "https://wallpapercave.com/wp/wp2014325.jpg",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjQ2NDA3MDcxMF5BMl5BanBnXkFtZTgwMjE5NTU0NzE@._V1_CR0,60,640,360_AL_UX477_CR0,0,477,268_AL_.jpg"
+  },
+  {
+    "id": "2",
+    "name": "The Dark Knight",
+    "releaseYear": 2008,
+    "description": "When the menace known as The Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham. The Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+    "longDesc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad itaque excepturi dignissimos laudantium obcaecati quam blanditiis earum veniam, dicta, velit, quo tenetur dolore ducimus repellat neque, architecto magni in cum.",
+    "rating": 4.7,
+    "genre": "action, crime, drama",
+    "cover": "http://cdn.wallpapername.com/1600x1200/20130609/the%20joker%20twoface%20batman%20the%20dark%20knight%20harvey%20dent_www.wallpapername.com_30.jpg",
+    "image": "https://img.cinemablend.com/filter:scale/quill/c/3/8/0/f/4/c380f4f12cfeec19f0c40c6f57db188f2f98cca8.jpg?mw=600"
+  },
+  {
+    "id": "3",
+    "name": "Lord of the Rings",
+    "releaseYear": 2004,
+    "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+    "longDesc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, beatae aliquid excepturi! Distinctio temporibus modi eos in facere eum, eligendi incidunt? Eligendi, ea, explicabo. Repellat laboriosam suscipit natus totam dolores?",
+    "rating": 4.9,
+    "genre": "adventure, drama, fantasy",
+    "cover": "https://cdn.wallpapersafari.com/4/17/NtiZBG.jpg",
+    "image": "https://img.cinemablend.com/filter:scale/quill/0/f/5/2/a/6/0f52a6843a25c1a5c1f9a0c00548cad9e1d912e2.jpg?mw=600"
+  },
+  {
+    "name": "Kaithi",
+    "rating": "4.8",
+    "description": "A convict serving a life sentence escapes prison but ends up finding he is being pursued by more than just the police.",
+    "image": "https://miro.medium.com/max/2560/1*K1No3DA9oqas5WAH0mUjZA.jpeg",
+    "cover": "https://districtchronicles.com/wp-content/uploads/2019/11/Kaithi-1280x720.jpg",
+    "longDesc": "A smuggling van carrying a ton of drugs and a group of smugglers are captured by Inspector Bejoy and his team. The drugs belong to Adaikalam, none of the police officers have seen him nor don't they know how he looks. Adaikalam's brother Anbu plans to capture the police inspectors and kill them, take their drugs back from them. According to the Anbu's plan, all of the police officers get high and unconscious after consuming poisoned drinks at a higher official's retirement party. Bejoy, who avoided the drinks as he was under medication, escapes from the cruel plan and tries to save the lives of all the unconscious officials without letting the media or anyone else from the outside finding out, so he convinces Dilli, an ex-prisoner who happened to be there with him as he was detained for looking suspicious, to help him save the officers' lives by promising him that he will help Dilli meet his daughter for the first time the next morning. With the help of a truck borrowed from Kamatchi, who is a caterer at the higher official's mansion. Dilli, Bejoy, and Kamatchi together load the unconscious bodies of the officials on the truck and get them to the hospital as soon as possible without letting the gangsters get their bodies. As another group under the same gangster tries to break into the police station where the drugs are hidden, a group of college students who were detained due to drunken driving, along with constable Napoleon who are trapped inside the police station take instructions from Bejoy over the phone and try to keep the gangsters outside the police station at the cost of their own lives while they wait for Dilli and Bejoy. Dilli, Bejoy and Kamatchi come across various gangs of thugs, who are being guided by a corrupt cop who is acting unconscious, the same cop who poisoned their drinks. The gangs seek to kill a list of 5 cops including Bejoy. But Dilli beats up all of them. Back at the station Napoleon is told by Bejoy to negotiate a deal with the captured men of Adaikalam to call Anbu, and inform him that Napoleon will release the men in return they go away, leaving the Napoleon and the students unharmed. But it is then revealed that Adaikalam is among those who are captured, so they don't release them. Adaikalam tries to guide Anbu into the station, but one of the students purposely blasts loud music to keep him from hearing Adaikalam. Anbu manages to climb up to the roof and break into the station, but he is subdued and tied up. Dilli, and Kamatchi manage to transfer the unconscious officers to a school bus on the way to the hospital, so that they can continue to the station. The corrupt cop then convinces them that he is alright, so they take him with them. They come across another gang who seek to kill Bejoy, the corrupt cop stabs Dilli twice, but he still manages to kill all of them and proceeds to the station. The gang outside the station manage to catch a student, and under the order of Anbu they kill him, while Anbu laughs sadistically, Napoleon then bludgeons and kills Anbu with a fire extinguisher, to which Adaikalam swears he will kill all of them and their families. Dilli, Bejoy and Kamatchi make it to the station. Dilli then enters the station through a secret underground passage he send the students out through the secret passage, while he and Napoleon go to burn up all the drugs, but they instead find a confiscated minigun, they use it to kill the entire gang outside the station.",
+    "genre": "Drama,Crime,Thriller,Action",
+    "id": "hr6i7"
+  }
 ]

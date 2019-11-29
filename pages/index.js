@@ -6,7 +6,6 @@ import { getMovies, getCategories } from '../actions'
 
 const Home = (props) => { // The data from getInitialProps will be available in the props of the component
   const { images, categories } = props
-  debugger
   return (
     <div>
 
