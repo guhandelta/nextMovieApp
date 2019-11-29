@@ -7,6 +7,7 @@ const Carousel = (props) => {
   return (
     <div id="carouselExampleIndicators" className="carousel slide my-4" data-ride="carousel">
       <ol className="carousel-indicators">
+        
         {
           images.map((image, index) => (
             <li
