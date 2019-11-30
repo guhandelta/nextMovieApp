@@ -2,7 +2,7 @@
 //- but with the dynamic routing, offerred by Next.js, the name of the page should be enclosed by [], to inform Next.js as, this-
 //- page will be dynamic
 import { useRouter } from 'next/router'
-import { getMovieById, deleteMovie } from '../../actions'  
+import { getMovieById, deleteMovie } from '../../../actions'
 
 const Movie = (props) => {
     const router = useRouter()
