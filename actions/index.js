@@ -55,3 +55,8 @@ export const getMovieById = (id) => {
     //     setTimeout(() => resolve(movie), 100)
     // })
 }
+export const deleteMovie = (id) => {
+
+    return axios.delete(`${BASE_URL}/api/v1/movies/${id}`).then(res => res.data)
+
+}

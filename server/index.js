@@ -48,7 +48,20 @@ app.prepare().then(() => { // prepare() -> preparing the app to run => compile t
 
     server.delete('/api/v1/movies/:id', (req, res) => {
         const { id } = req.params
-        return res.json({ message: `Deleteting the movie with the id: ${id}` })
+        const movieIndex = moviesData.findIndex(m => m.id === id)
+        moviesData.splice(movieIndex, 1)
+
+        const pathToFile = path.join(__dirname, filePath) // Full path to JSON file
+        const StringifiedData = JSON.stringify(moviesData, null, 2) //null->add each property to a new line, 2->indents the strigify obj with 2 spaces
+
+        fs.writeFile(pathToFile, StringifiedData, err => {
+            if (err) {
+                return res.status(422).send(err)
+            }
+            return res.json('Movie has successfully been added!')
+        })
+
+
     })
 
     server.get('/faq', (req, res) => {
