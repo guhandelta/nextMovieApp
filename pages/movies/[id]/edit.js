@@ -10,7 +10,14 @@ class EditMovie extends Component {
     }
 
     state = {
-        movie: {} //empty obj
+        movie: {
+            name: '',
+            rating: '',
+            description: '',
+            image: '',
+            cover: '',
+            longDesc: '',
+        }
     }
 
     componentDidMount() {
@@ -23,7 +30,6 @@ class EditMovie extends Component {
 
     render() {
         const { movie } = this.state
-        debugger;
         return (
             <div className="container">
                 <h1>Edit Movie</h1>
