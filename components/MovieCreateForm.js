@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const MovieCreateForm = (props) => {
+    const [movieDataLoaded, setMovieDataLoaded] = useState(false)
     // uncontrolled data error, occurs if the inputs are not given a default value durng state initialization
     const [form, setForm] = useState({
         name: '',
@@ -11,6 +12,16 @@ const MovieCreateForm = (props) => {
         longDesc: '',
 
     })
+
+    // This will be used to initialize the form by populating it with movie data passed through the props
+    useEffect(() => {
+        if (props.movieData) {
+            setForm(props.movieData) // populate the movie edit form with movie data of the current movie
+            setMovieDataLoaded(true)
+        } else {
+            alert('Some issue with useEffect')
+        }
+    }, [movieDataLoaded]) // To make sure that the component is not called/re-rendered everytime and only when the movie data is loaded
 
     const handleChange = (event) => {
         const target = event.target;

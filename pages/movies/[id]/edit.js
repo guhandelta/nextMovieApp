@@ -15,18 +15,20 @@ class EditMovie extends Component {
 
     componentDidMount() {
         // Fetching the data from the props
-        const { id } = this.props.query 
+        const { id } = this.props.query
         getMovieById(id).then(movie => {
             this.setState({ movie }) // setting the movie data to the state
         })
     }
 
     render() {
+        const { movie } = this.state
+        debugger;
         return (
             <div className="container">
                 <h1>Edit Movie</h1>
-                {JSON.stringify(this.state.movie)}
-                <MovieCreateForm />
+                {JSON.stringify(movie)}
+                <MovieCreateForm movieData={movie} />
             </div>
         )
     }
